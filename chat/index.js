@@ -13,7 +13,7 @@ redis.subscribe('test-channel');
 
 redis.on('message',function(channel,message){
 
-
+// console.log(channel,message);
 /*
 console.log('message received');
  console.log(message);
@@ -21,7 +21,8 @@ console.log('message received');
 
     message = JSON.parse(message);
 
-    //console.log(message.data.username);
+    console.log(message.data.username);
+
 
     io.emit(channel + ":" + message.event,message.data);// test-channel: usersignup
 

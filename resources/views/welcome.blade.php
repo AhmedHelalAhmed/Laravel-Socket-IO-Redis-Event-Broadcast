@@ -35,7 +35,9 @@
 
             ready: function(){
 
-                socket.on('test-channel:UserSignUp',function(data){
+                socket.on('test-channel:App\\Events\\UserSignUP',function(data){
+
+                    console.log(data);
 
                     this.users.push(data.username);
                 }.bind(this));

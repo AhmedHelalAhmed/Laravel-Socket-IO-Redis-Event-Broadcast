@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Redis;
+use App\Events\UserSignUP;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,7 @@ composer require predis/predis
 
 
 // 1. publish event with redis
+ /*
 $data=[
 'event'=>'UserSignUp',
     'data'=>[
@@ -43,6 +45,16 @@ $data=[
     ]
 ];
 Redis::publish('test-channel',json_encode($data));
+*/
+
+event(new UserSignUP('AHMED HELAL'));
+
+
+
+
+
+
+
 
 // return "Done";
 // 2. nodejs + redis subscribes to this event
